@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      camelCase.js - Documentation
+      isNotNil.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        camelCase.js
+        isNotNil.js
       </h1>
     
 
@@ -90,35 +90,22 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { adjust, join, map, pipe, toLower } from 'ramda';
-
-import capitalize from './capitalize';
-import words from './words';
+    <pre class="prettyprint source linenums"><code>import { complement, isNil } from 'ramda';
 
 /**
- * Transform a string to camelCase
+ * Complement for isNil
  *
  * @function
- * @param {String} str - Received string
- * @returns {String}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * camelCase('My name is Earl'); //'myNameIsEarl'
- * camelCase('my-name-is-earl'); //'myNameIsEarl'
+ * isNotNil('a'); // true
+ * isNotNil(undefined); // false
  */
-const camelCase = pipe(
-  words,
-  map(
-    pipe(
-      toLower,
-      capitalize,
-    ),
-  ),
-  adjust(0, toLower),
-  join(''),
-);
+const isNotNil = complement(isNil);
 
-export default camelCase;
+export default isNotNil;
 </code></pre>
   </article>
 </section>

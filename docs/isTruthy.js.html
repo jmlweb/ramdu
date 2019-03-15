@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      camelCase.js - Documentation
+      isTruthy.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        camelCase.js
+        isTruthy.js
       </h1>
     
 
@@ -90,35 +90,27 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { adjust, join, map, pipe, toLower } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-import capitalize from './capitalize';
-import words from './words';
+import isFalsy from './isFalsy';
 
 /**
- * Transform a string to camelCase
+ * Complement for isFalsy
  *
  * @function
- * @param {String} str - Received string
- * @returns {String}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * camelCase('My name is Earl'); //'myNameIsEarl'
- * camelCase('my-name-is-earl'); //'myNameIsEarl'
+ * isTruthy('a'); // true
+ * isTruthy(1); // true
+ * isTruthy(undefined); // false
+ * isTruthy(0); // false
+ * isTruthy(null); // false
  */
-const camelCase = pipe(
-  words,
-  map(
-    pipe(
-      toLower,
-      capitalize,
-    ),
-  ),
-  adjust(0, toLower),
-  join(''),
-);
+const isTruthy = complement(isFalsy);
 
-export default camelCase;
+export default isTruthy;
 </code></pre>
   </article>
 </section>

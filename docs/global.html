@@ -73,7 +73,7 @@
 
     
 
-    <h3 id="global-nav">Global</h3><ul><li><a href="global.html#camelCase">camelCase</a></li><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#castArray">castArray</a></li><li><a href="global.html#compact">compact</a></li></ul>
+    <h3 id="global-nav">Global</h3><ul><li><a href="global.html#camelCase">camelCase</a></li><li><a href="global.html#capitalize">capitalize</a></li><li><a href="global.html#castArray">castArray</a></li><li><a href="global.html#compact">compact</a></li><li><a href="global.html#deburr">deburr</a></li><li><a href="global.html#endsWith">endsWith</a></li><li><a href="global.html#isFalsy">isFalsy</a></li><li><a href="global.html#isNot">isNot</a></li><li><a href="global.html#isNotEmpty">isNotEmpty</a></li><li><a href="global.html#isNotNil">isNotNil</a></li><li><a href="global.html#isTruthy">isTruthy</a></li><li><a href="global.html#mapIndexed">mapIndexed</a></li><li><a href="global.html#notEndsWith">notEndsWith</a></li></ul>
   </nav>
 
   <div id="main">
@@ -794,6 +794,1550 @@ castArray(undefined); // undefined</code></pre>
     
 
   <pre class="prettyprint"><code>compact([undefined, 1, null, 'a', '']); // [1, 'a']</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#deburr">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="deburr">
+      <span class="type-signature"></span>deburr<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Removes diacritical marks</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>str</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      String
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Source string</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="deburr.js.html">deburr.js</a>, <a href="deburr.js.html#line15">line 15</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#deburr-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="deburr-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>deburr('José Manuel Lucas Muñoz'); // 'Jose Manuel Lucas Munoz'</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#endsWith">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="endsWith">
+      <span class="type-signature"></span>endsWith<span class="signature">(testStr, str)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Checks if one string is the end of other</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>testStr</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      String
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Test string</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>str</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      String
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>String provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="endsWith.js.html">endsWith.js</a>, <a href="endsWith.js.html#line20">line 20</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#endsWith-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="endsWith-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>endsWith('mer', 'mc hammer'); // true
+endsWith('mar', 'mc hammer'); // false</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#isFalsy">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="isFalsy">
+      <span class="type-signature"></span>isFalsy<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Checks if the boolean version of the argument provided is false</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>val</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The value provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="isFalsy.js.html">isFalsy.js</a>, <a href="isFalsy.js.html#line18">line 18</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#isFalsy-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="isFalsy-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>isFalsy(undefined); // true
+isFalsy(null); // true
+isFalsy(0); // true
+isFalsy(''); // true
+isFalsy(1); // false
+isFalsy('a'); // false</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#isNot">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="isNot">
+      <span class="type-signature"></span>isNot<span class="signature">(type, val)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Returns true when the type is not like the one provided</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>type</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The type to avoid</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>val</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The value provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="isNot.js.html">isNot.js</a>, <a href="isNot.js.html#line16">line 16</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#isNot-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="isNot-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>isNot(String, 1); // true
+isNot(String, undefined); // true
+isNot(String, '1'); // false</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#isNotEmpty">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="isNotEmpty">
+      <span class="type-signature"></span>isNotEmpty<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Complement for isEmpty</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>val</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The value provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="isNotEmpty.js.html">isNotEmpty.js</a>, <a href="isNotEmpty.js.html#line16">line 16</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#isNotEmpty-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="isNotEmpty-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>isNotEmpty('a'); // true
+isNotEmpty({ a: 'a' }); // true
+isNotEmpty(''); // false
+isNotEmpty({}); // false</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#isNotNil">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="isNotNil">
+      <span class="type-signature"></span>isNotNil<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Complement for isNil</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>val</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The value provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="isNotNil.js.html">isNotNil.js</a>, <a href="isNotNil.js.html#line14">line 14</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#isNotNil-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="isNotNil-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>isNotNil('a'); // true
+isNotNil(undefined); // false</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#isTruthy">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="isTruthy">
+      <span class="type-signature"></span>isTruthy<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Complement for isFalsy</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>val</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The value provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="isTruthy.js.html">isTruthy.js</a>, <a href="isTruthy.js.html#line19">line 19</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#isTruthy-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="isTruthy-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>isTruthy('a'); // true
+isTruthy(1); // true
+isTruthy(undefined); // false
+isTruthy(0); // false
+isTruthy(null); // false</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#mapIndexed">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="mapIndexed">
+      <span class="type-signature"></span>mapIndexed<span class="signature">(fn, arr)</span><span class="type-signature"> &rarr; {Array}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Indexed version of map</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>fn</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      function
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The function passed to map, receiving index as second argument</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>arr</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      Array
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Source array</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="mapIndexed.js.html">mapIndexed.js</a>, <a href="mapIndexed.js.html#line14">line 14</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#mapIndexed-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="mapIndexed-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>mapIndexed((val, idx) => `${idx}.${val}`, ['a', 'b', 'c']); // ['0.a', '1.b', '2.c']</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#notEndsWith">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="notEndsWith">
+      <span class="type-signature"></span>notEndsWith<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Complement for endsWith</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>val</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      *
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The value provided</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="notEndsWith.js.html">notEndsWith.js</a>, <a href="notEndsWith.js.html#line16">line 16</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#notEndsWith-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="notEndsWith-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>isNotNil('a'); // true
+isNotNil(undefined); // false</code></pre>
 
 
   </div>

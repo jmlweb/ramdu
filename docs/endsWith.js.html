@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      camelCase.js - Documentation
+      endsWith.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        camelCase.js
+        endsWith.js
       </h1>
     
 
@@ -90,35 +90,32 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { adjust, join, map, pipe, toLower } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { curry, equals, length, multiply, pipe, slice } from 'ramda';
 
-import capitalize from './capitalize';
-import words from './words';
-
-/**
- * Transform a string to camelCase
- *
- * @function
- * @param {String} str - Received string
- * @returns {String}
- *
- * @example
- * camelCase('My name is Earl'); //'myNameIsEarl'
- * camelCase('my-name-is-earl'); //'myNameIsEarl'
- */
-const camelCase = pipe(
-  words,
-  map(
-    pipe(
-      toLower,
-      capitalize,
-    ),
-  ),
-  adjust(0, toLower),
-  join(''),
+const getStart = pipe(
+  length,
+  multiply(-1),
 );
 
-export default camelCase;
+/**
+ * Checks if one string is the end of other
+ *
+ * @function
+ * @param {String} testStr - Test string
+ * @param {String} str - String provided
+ * @returns {Boolean}
+ *
+ * @example
+ * endsWith('mer', 'mc hammer'); // true
+ * endsWith('mar', 'mc hammer'); // false
+ */
+const endsWith = (testStr, str) =>
+  pipe(
+    slice(getStart(testStr), Infinity),
+    equals(testStr),
+  )(str);
+
+export default curry(endsWith);
 </code></pre>
   </article>
 </section>

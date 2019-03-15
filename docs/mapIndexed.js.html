@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      camelCase.js - Documentation
+      mapIndexed.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        camelCase.js
+        mapIndexed.js
       </h1>
     
 
@@ -90,35 +90,22 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { adjust, join, map, pipe, toLower } from 'ramda';
-
-import capitalize from './capitalize';
-import words from './words';
+    <pre class="prettyprint source linenums"><code>import { addIndex, map } from 'ramda';
 
 /**
- * Transform a string to camelCase
+ * Indexed version of map
  *
  * @function
- * @param {String} str - Received string
- * @returns {String}
+ * @param {Function} fn - The function passed to map, receiving index as second argument
+ * @param {Array} arr - Source array
+ * @returns {Array}
  *
  * @example
- * camelCase('My name is Earl'); //'myNameIsEarl'
- * camelCase('my-name-is-earl'); //'myNameIsEarl'
+ * mapIndexed((val, idx) => `${idx}.${val}`, ['a', 'b', 'c']); // ['0.a', '1.b', '2.c']
  */
-const camelCase = pipe(
-  words,
-  map(
-    pipe(
-      toLower,
-      capitalize,
-    ),
-  ),
-  adjust(0, toLower),
-  join(''),
-);
+const mapIndexed = addIndex(map);
 
-export default camelCase;
+export default mapIndexed;
 </code></pre>
   </article>
 </section>

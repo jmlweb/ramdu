@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      camelCase.js - Documentation
+      isFalsy.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        camelCase.js
+        isFalsy.js
       </h1>
     
 
@@ -90,35 +90,32 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { adjust, join, map, pipe, toLower } from 'ramda';
-
-import capitalize from './capitalize';
-import words from './words';
+    <pre class="prettyprint source linenums"><code>import { either, isEmpty, equals, pipe } from 'ramda';
 
 /**
- * Transform a string to camelCase
+ * Checks if the boolean version of the argument provided is false
  *
  * @function
- * @param {String} str - Received string
- * @returns {String}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * camelCase('My name is Earl'); //'myNameIsEarl'
- * camelCase('my-name-is-earl'); //'myNameIsEarl'
+ * isFalsy(undefined); // true
+ * isFalsy(null); // true
+ * isFalsy(0); // true
+ * isFalsy(''); // true
+ * isFalsy(1); // false
+ * isFalsy('a'); // false
  */
-const camelCase = pipe(
-  words,
-  map(
-    pipe(
-      toLower,
-      capitalize,
-    ),
+const isFalsy = either(
+  isEmpty,
+  pipe(
+    Boolean,
+    equals(false),
   ),
-  adjust(0, toLower),
-  join(''),
 );
 
-export default camelCase;
+export default isFalsy;
 </code></pre>
   </article>
 </section>
