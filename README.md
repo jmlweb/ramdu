@@ -1,4 +1,4 @@
-![Ramdu](ramdu.svg)
+![Ramdu](https://raw.githubusercontent.com/jmlweb/ramdu/master/ramdu.svg?sanitize=true)
 
 # Small utils set built around Ramda
 
