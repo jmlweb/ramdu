@@ -1,0 +1,6 @@
+[submodule "config/doctemplates/jsdoc-template"]
+	path = config/doctemplates/jsdoc-template
+	url = https://github.com/braintree/jsdoc-template
+[submodule "jsdoc-template"]
+	path = jsdoc-template
+	url = https://github.com/braintree/jsdoc-template

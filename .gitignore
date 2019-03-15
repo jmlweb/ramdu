@@ -1,0 +1,10 @@
+/node_modules
+/yarn-error.log
+/jsdoc-template
+/cjs
+/es
+/iife
+/coverage
+/.nyc_output
+/.vscode
+package-lock.json
