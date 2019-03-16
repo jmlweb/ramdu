@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      compact.js - Documentation
+      toInteger.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        compact.js
+        toInteger.js
       </h1>
     
 
@@ -90,21 +90,21 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { filter, identity } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { partialRight } from 'ramda';
 
 /**
- * Removes falsy values from an array
+ * Converts a number to a integer of base 10
  *
  * @function
- * @param {Array} arr - Source array
- * @returns {Array}
+ * @param {Number} x - The source number
+ * @returns {Number}
  *
  * @example
- * compact([undefined, 1, null, 'a', '']); // [1, 'a']
+ * toInteger(23.56212); // 23
  */
-const compact = filter(identity);
+const toInteger = partialRight(parseInt, [10]);
 
-export default compact;
+export default toInteger;
 </code></pre>
   </article>
 </section>

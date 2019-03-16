@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      compact.js - Documentation
+      toFixed.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        compact.js
+        toFixed.js
       </h1>
     
 
@@ -90,21 +90,23 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { filter, identity } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
 
 /**
- * Removes falsy values from an array
+ * Converts a number to a string with n decimals
  *
  * @function
- * @param {Array} arr - Source array
- * @returns {Array}
+ * @param {Number} decimals - The number of decimals
+ * @param {Number} x - The source number
+ * @returns {String}
  *
  * @example
- * compact([undefined, 1, null, 'a', '']); // [1, 'a']
+ * toFixed(2, 23.56786); // '23.57'
+ * toFixed(2)(23.56212); // '23.56'
  */
-const compact = filter(identity);
+const toFixed = invoker(1, 'toFixed');
 
-export default compact;
+export default toFixed;
 </code></pre>
   </article>
 </section>

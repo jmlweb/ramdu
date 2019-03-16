@@ -6,12 +6,13 @@ import endsWith from './endsWith';
  * Complement for endsWith
  *
  * @function
- * @param {*} val - The value provided
+ * @param {String} testStr - Test string
+ * @param {String} str - String provided
  * @returns {Boolean}
  *
  * @example
- * isNotNil('a'); // true
- * isNotNil(undefined); // false
+ * notEndsWith('mar', 'mc hammer'); // true
+ * notEndsWith('mer', 'mc hammer'); // false
  */
 const notEndsWith = complement(endsWith);
 

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      compact.js - Documentation
+      words.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        compact.js
+        words.js
       </h1>
     
 
@@ -90,21 +90,23 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { filter, identity } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { split } from 'ramda';
+
+const SYMBOLS = new RegExp(/[/\-_ ]/gi);
 
 /**
- * Removes falsy values from an array
+ * Splits an string by the most common symbols
  *
  * @function
- * @param {Array} arr - Source array
+ * @param {String} str - Received string
  * @returns {Array}
  *
  * @example
- * compact([undefined, 1, null, 'a', '']); // [1, 'a']
+ * words('My name is Earl'); //['My', 'name', 'is', 'Earl']
  */
-const compact = filter(identity);
+const words = split(SYMBOLS);
 
-export default compact;
+export default words;
 </code></pre>
   </article>
 </section>

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      compact.js - Documentation
+      slugify.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        compact.js
+        slugify.js
       </h1>
     
 
@@ -90,21 +90,31 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { filter, identity } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { join, replace, pipe, toLower } from 'ramda';
+
+import deburr from './deburr';
+import words from './words';
 
 /**
- * Removes falsy values from an array
+ * Transform a string to a slug
  *
  * @function
- * @param {Array} arr - Source array
- * @returns {Array}
+ * @param {String} str - Received string
+ * @returns {String}
  *
  * @example
- * compact([undefined, 1, null, 'a', '']); // [1, 'a']
+ * slugify('My name is Earl'); //'my-name-is-earl'
+ * slugify('José Manuel Lucas Muñoz'); //'jose-manuel-lucas-munoz'
  */
-const compact = filter(identity);
+const slugify = pipe(
+  toLower,
+  deburr,
+  words,
+  join('-'),
+  replace(/[^a-zA-Z\d-]+/g, ''),
+);
 
-export default compact;
+export default slugify;
 </code></pre>
   </article>
 </section>

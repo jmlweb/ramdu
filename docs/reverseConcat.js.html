@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      compact.js - Documentation
+      reverseConcat.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        compact.js
+        reverseConcat.js
       </h1>
     
 
@@ -90,21 +90,23 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { filter, identity } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { concat, flip } from 'ramda';
 
 /**
- * Removes falsy values from an array
+ * Concatenates in reverse order
  *
  * @function
- * @param {Array} arr - Source array
- * @returns {Array}
+ * @param {Array|String} a - The group to be added at the end
+ * @param {Array|String} b - The group to be added at the start
+ * @returns {Array|String}
  *
  * @example
- * compact([undefined, 1, null, 'a', '']); // [1, 'a']
+ * reverseConcat('oo', 'f'); // foo
+ * reverseConcat(['o', 'o'], ['f']); //['f', 'o', 'o']
  */
-const compact = filter(identity);
+const reverseConcat = flip(concat);
 
-export default compact;
+export default reverseConcat;
 </code></pre>
   </article>
 </section>
