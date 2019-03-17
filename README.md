@@ -2,7 +2,19 @@
 
 # Small utils set build around Ramda
 
-[![Build Status](https://travis-ci.com/jmlweb/ramdu.svg?branch=master)](https://travis-ci.com/jmlweb/ramdu)
+[![Last Commit][last-commit-badge]][last-commit]
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
+[![Coveralls][coveralls-badge]][coveralls]
+
+[last-commit-badge]: https://img.shields.io/github/last-commit/jmlweb/ramdu.svg
+[last-commit]: https://github.com/jmlweb/ramdu
+[build-badge]: https://img.shields.io/travis/com/jmlweb/ramdu/master.png?style=flat-square
+[build]: https://travis-ci.com/jmlweb/ramdu
+[npm-badge]: https://img.shields.io/npm/v/ramdu.png?style=flat-square
+[npm]: https://www.npmjs.org/package/ramdu
+[coveralls-badge]: https://img.shields.io/coveralls/jmlweb/ramdu/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/jmlweb/ramdu
 
 ## Getting started
 
