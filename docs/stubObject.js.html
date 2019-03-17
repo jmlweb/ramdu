@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      stubObject.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        stubObject.js
       </h1>
     
 
@@ -90,23 +90,22 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { always } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Returns always an empty object
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Any}
+ * @returns {Object}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * stubObject(); // {}
+ * stubObject('foo'); // {}
  */
-const toFixed = invoker(1, 'toFixed');
+const stubObject = always({});
 
-export default toFixed;
+export default stubObject;
 </code></pre>
   </article>
 </section>

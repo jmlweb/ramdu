@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      setDerivedProps.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        setDerivedProps.js
       </h1>
     
 
@@ -90,23 +90,25 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { applySpec, curry, mergeDeepRight } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Generates new properties based on calculations over the object provided
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Object} specObj - The object defining the transformations
+ * @param {Object} obj - The source object
+ * @returns {Object}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * setDerivedProps({ c: ({ a, b }) => a + 1 }, { a: 1, b: 2 }); // { a: 1, b: 2, c: 3 }
  */
-const toFixed = invoker(1, 'toFixed');
+const setDerivedProps = (specObj, obj) => {
+  const result = applySpec(specObj)(obj);
+  return mergeDeepRight(obj, result);
+};
 
-export default toFixed;
+export default curry(setDerivedProps);
 </code></pre>
   </article>
 </section>

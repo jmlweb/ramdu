@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      hasNotIn.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        hasNotIn.js
       </h1>
     
 
@@ -90,23 +90,30 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement, has } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Returns true when the object or the prototype chain doesn't contain
+ * a property with the specified name
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {String} x - The name of the property
+ * @param {Object} obj - The object where to find the property
+ * @returns {Boolean}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * class Foo {
+ *   constructor() {
+ *     this.x = 'foo value';
+ *   }
+ * }
+ *
+ * hasNotIn('bar', Foo); // true
+ * hasNotIn('constructor', Foo); // false
  */
-const toFixed = invoker(1, 'toFixed');
+const hasNot = complement(has);
 
-export default toFixed;
+export default hasNot;
 </code></pre>
   </article>
 </section>

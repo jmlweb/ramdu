@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      isEven.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        isEven.js
       </h1>
     
 
@@ -90,23 +90,26 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { equals, modulo, pipe, __ } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Checks if the number version of the argument provided is even
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * isEven(2); // true
+ * isEven(3); // false
  */
-const toFixed = invoker(1, 'toFixed');
+const isEven = pipe(
+  Number,
+  modulo(__, 2),
+  equals(0),
+);
 
-export default toFixed;
+export default isEven;
 </code></pre>
   </article>
 </section>

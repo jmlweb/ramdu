@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      isOdd.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        isOdd.js
       </h1>
     
 
@@ -90,23 +90,24 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+
+import isEven from './isEven';
 
 /**
- * Converts a number to a string with n decimals
+ * Checks if the number version of the argument provided is odd
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * isOdd(3); // true
+ * isOdd(4); // false
  */
-const toFixed = invoker(1, 'toFixed');
+const isOdd = complement(isEven);
 
-export default toFixed;
+export default isOdd;
 </code></pre>
   </article>
 </section>

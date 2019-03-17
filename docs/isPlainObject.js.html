@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      isPlainObject.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        isPlainObject.js
       </h1>
     
 
@@ -90,23 +90,49 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { allPass, both, equals, invoker, is, path, pipe, propIs } from 'ramda';
 
+const prototypeIsObject = both(
+  is(Object),
+  pipe(
+    obj => Object.prototype.toString(obj),
+    equals('[object Object]'),
+  ),
+);
+
+const constructorIsValid = propIs(Function, 'constructor');
+
+const hasOwnProperty = invoker(1, 'hasOwnProperty');
+
+const prototypeIsValid = pipe(
+  path(['constructor', 'prototype']),
+  both(prototypeIsObject, hasOwnProperty('isPrototypeOf')),
+);
 /**
- * Converts a number to a string with n decimals
+ * Checks if the argument provided is a plain object
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * const a = { foo: 'bar' };
+ *
+ * class B {
+ *   constructor(str) {
+ *     this.foo = str;
+ *   }
+ * }
+ *
+ * const c = new B('bar');
+ *
+ * isPlainObject(a); // true
+ * isPlainObject(B); // false
+ * isPlainObject(c); // false
  */
-const toFixed = invoker(1, 'toFixed');
+const isPlainObject = allPass([prototypeIsObject, constructorIsValid, prototypeIsValid]);
 
-export default toFixed;
+export default isPlainObject;
 </code></pre>
   </article>
 </section>

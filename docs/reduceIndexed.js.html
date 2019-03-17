@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      reduceIndexed.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        reduceIndexed.js
       </h1>
     
 
@@ -90,23 +90,22 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { addIndex, reduce } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Indexed version of reduce
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Function} fn - The function passed to reduce, receiving index as third argument for the reducer fn
+ * @param {Array} arr - Source array
+ * @returns {*}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * reduceIndexed((acc, curr, idx) => `${acc}${curr}.${idx},`, '', ['a', 'b', 'c']); // 'a.0,b.1,c.2,'
  */
-const toFixed = invoker(1, 'toFixed');
+const reduceIndexed = addIndex(reduce);
 
-export default toFixed;
+export default reduceIndexed;
 </code></pre>
   </article>
 </section>
