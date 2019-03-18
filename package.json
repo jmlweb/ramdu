@@ -19,7 +19,7 @@
     "npm": ">= 3.10.10"
   },
   "scripts": {
-    "test": "nyc --check-coverage --lines 95 --functions 95 --branches 95 --reporter=lcov --reporter=text --reporter=html mocha --require @babel/register --timeout=3000 src/**/*.spec.js",
+    "test": "nyc --check-coverage --lines 95 --functions 95 --branches 95 --reporter=lcov --reporter=text-summary --reporter=html mocha --require @babel/register --timeout=3000 src/**/*.spec.js",
     "test:dev": "mocha --watch --require @babel/register src/**/*.spec.js",
     "clean": "rimraf ./cjs ./es ./iife",
     "prebuild": "npm run clean",

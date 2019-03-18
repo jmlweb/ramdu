@@ -8,9 +8,9 @@ import { always } from 'ramda';
  * @returns {Array}
  *
  * @example
- * stubArray(); // []
- * stubArray('foo'); // []
+ * alwaysArray(); // []
+ * alwaysArray('foo'); // []
  */
-const stubArray = always([]);
+const alwaysArray = always([]);
 
-export default stubArray;
+export default alwaysArray;

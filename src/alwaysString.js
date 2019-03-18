@@ -8,9 +8,9 @@ import { always } from 'ramda';
  * @returns {String}
  *
  * @example
- * stubString(); // ''
- * stubString('foo'); // ''
+ * alwaysString(); // ''
+ * alwaysString('foo'); // ''
  */
-const stubString = always('');
+const alwaysString = always('');
 
-export default stubString;
+export default alwaysString;

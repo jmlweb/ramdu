@@ -8,9 +8,9 @@ import { always } from 'ramda';
  * @returns {Object}
  *
  * @example
- * stubObject(); // {}
- * stubObject('foo'); // {}
+ * alwaysObject(); // {}
+ * alwaysObject('foo'); // {}
  */
-const stubObject = always({});
+const alwaysObject = always({});
 
-export default stubObject;
+export default alwaysObject;
