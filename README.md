@@ -1,6 +1,6 @@
 ![Ramdu](https://raw.githubusercontent.com/jmlweb/ramdu/master/ramdu.svg?sanitize=true)
 
-# Small utils set build around Ramda
+# Small utils set built around Ramda
 
 [![Last Commit][last-commit-badge]][last-commit]
 [![Travis][build-badge]][build]
