@@ -10,7 +10,7 @@ import withEvolvedArgs from './withEvolvedArgs';
  * @param {*} trueValue - Value returned when pred evaluates true
  * @param {*} falseValue - Value returned when pred evaluates false
  * @param {*} val - The value to evaluate
- * @returns {trueValue|falseValue}
+ * @returns {*}
  *
  * @example
  * ifElseAlways(prop('foo'), 'a', 'b', { foo: true }); // 'a'

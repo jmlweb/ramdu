@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      unlessAlways.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        unlessAlways.js
       </h1>
     
 
@@ -90,23 +90,31 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { always, unless } from 'ramda';
+
+import withEvolvedArgs from './withEvolvedArgs';
 
 /**
- * Converts a number to a string with n decimals
+ * Executes unless with a fixed value
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Function} pred - The predicate
+ * @param {*} value - Value returned when pred evaluates true
+ * @param {*} val - The value to evaluate
+ * @returns {value|val}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * whenAlways(prop('foo'), 'a', { foo: true }); // 'a'
+ * whenAlways(prop('foo'), 'a', { foo: false }); // { foo: false }
  */
-const toFixed = invoker(1, 'toFixed');
+const unlessAlways = withEvolvedArgs(
+  {
+    1: always,
+  },
+  unless,
+);
 
-export default toFixed;
+export default unlessAlways;
 </code></pre>
   </article>
 </section>

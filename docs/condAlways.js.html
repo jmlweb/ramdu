@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      condAlways.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        condAlways.js
       </h1>
     
 
@@ -90,23 +90,37 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { always, adjust, cond, map } from 'ramda';
+
+import withEvolvedArgs from './withEvolvedArgs';
 
 /**
- * Converts a number to a string with n decimals
+ * Executes cond, but returning fixes values, passed as second argument to predicate
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Array} pred - The predicate
+ * @param {*} val - The value to evaluate
+ * @returns {*}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ *
+ * const fn = condAlways([
+ *   [prop('foo'), 'a'],
+ *   [prop('bar'), 'b'],
+ * ]);
+ *
+ * fn({ foo: true }); // 'a'
+ * fn({ bar: true }); // 'b'
+ * fn({}); // undefined
  */
-const toFixed = invoker(1, 'toFixed');
+const condAlways = withEvolvedArgs(
+  {
+    0: map(adjust(1, always)),
+  },
+  cond,
+);
 
-export default toFixed;
+export default condAlways;
 </code></pre>
   </article>
 </section>

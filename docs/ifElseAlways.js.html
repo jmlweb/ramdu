@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      ifElseAlways.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        ifElseAlways.js
       </h1>
     
 
@@ -90,23 +90,33 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { always, ifElse } from 'ramda';
+
+import withEvolvedArgs from './withEvolvedArgs';
 
 /**
- * Converts a number to a string with n decimals
+ * Executes ifElse over 2 fixed values, passed as second and third argument
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Function} pred - The predicate
+ * @param {*} trueValue - Value returned when pred evaluates true
+ * @param {*} falseValue - Value returned when pred evaluates false
+ * @param {*} val - The value to evaluate
+ * @returns {*}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * ifElseAlways(prop('foo'), 'a', 'b', { foo: true }); // 'a'
+ * ifElseAlways(prop('foo'), 'a', 'b', { foo: false }); // 'b'
  */
-const toFixed = invoker(1, 'toFixed');
+const ifElseAlways = withEvolvedArgs(
+  {
+    1: always,
+    2: always,
+  },
+  ifElse,
+);
 
-export default toFixed;
+export default ifElseAlways;
 </code></pre>
   </article>
 </section>

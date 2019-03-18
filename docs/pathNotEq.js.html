@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      pathNotEq.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        pathNotEq.js
       </h1>
     
 
@@ -90,23 +90,24 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement, pathEq } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ *  Complement for pathEq
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Array} x - The path
+ * @param {*} val - The value for comparison
+ * @param {Object} obj - The object where to find the key
+ * @returns {Boolean}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * pathNotEq(['foo', 'bar'], 'a', { foo: { bar: 'b' } }); // true
+ * pathNotEq(['foo', 'bar'], 'a', { foo: { bar: 'a' } }); // false
  */
-const toFixed = invoker(1, 'toFixed');
+const pathNotEq = complement(pathEq);
 
-export default toFixed;
+export default pathNotEq;
 </code></pre>
   </article>
 </section>

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      notIncludes.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        notIncludes.js
       </h1>
     
 
@@ -90,23 +90,23 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement, includes } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Complement for includes
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {*} searched - The value searched
+ * @param {Array} list - The list where to find the value
+ * @returns {Boolean}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * notIncludes('a', ['b', 'c']); // true
+ * notIncludes('b', ['b', 'c']); // false
  */
-const toFixed = invoker(1, 'toFixed');
+const notIncludes = complement(includes);
 
-export default toFixed;
+export default notIncludes;
 </code></pre>
   </article>
 </section>

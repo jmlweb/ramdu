@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      withEvolvedArgs.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        withEvolvedArgs.js
       </h1>
     
 
@@ -90,23 +90,32 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { apply, curry, evolve, pipe } from 'ramda';
+import list from './list';
 
 /**
- * Converts a number to a string with n decimals
+ * Transforms the arguments received applying an evolve over the object passed as argument
+ * Then, it executes the function passed as argument
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Object} obj - Object with the transformations
+ * @param {Function} fn  - function to be applied
+ * @returns {Function}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * withEvolvedArgs({
+ *   0: toUpper,
+ *   1: toLower,
+ * }, concat)('Say Hello ', 'To My Little Friend'); // 'SAY HELLO to my little friend'
  */
-const toFixed = invoker(1, 'toFixed');
+const withEvolvedArgs = (obj, fn) =>
+  pipe(
+    list,
+    evolve(obj),
+    apply(fn),
+  );
 
-export default toFixed;
+export default curry(withEvolvedArgs);
 </code></pre>
   </article>
 </section>

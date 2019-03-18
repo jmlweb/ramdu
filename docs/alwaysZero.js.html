@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      toFixed.js - Documentation
+      alwaysZero.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        toFixed.js
+        alwaysZero.js
       </h1>
     
 
@@ -90,23 +90,22 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { always } from 'ramda';
 
 /**
- * Converts a number to a string with n decimals
+ * Returns always zero
  *
  * @function
- * @param {Number} decimals - The number of decimals
- * @param {Number} x - The source number
- * @returns {String}
+ * @param {Any}
+ * @returns {Array}
  *
  * @example
- * toFixed(2, 23.56786); // '23.57'
- * toFixed(2)(23.56212); // '23.56'
+ * alwaysZero(); // 0
+ * alwaysZero(1); // 0
  */
-const toFixed = invoker(1, 'toFixed');
+const alwaysZero = always(0);
 
-export default toFixed;
+export default alwaysZero;
 </code></pre>
   </article>
 </section>
