@@ -8,7 +8,6 @@ import pkg from './package.json';
 const output = [
   { file: pkg.module, format: 'es' },
   { file: pkg.main, format: 'cjs', name: pkg.name },
-  { file: pkg.browser, format: 'iife', name: pkg.name },
 ];
 
 process.env.NODE_ENV = 'build';
