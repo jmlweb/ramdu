@@ -18,6 +18,13 @@
 
 ## Getting started
 
+Ramdu has some goals:
+
+- To be lightweight
+- To use only pure functions with a general purpose
+- To export currified versions of all functions
+- To look like original Ramda as much as possible
+
 ### [Documentation](https://jmlweb.github.io/ramdu/)
 
 ### Quick start
@@ -26,6 +33,26 @@
 yarn add ramdu
 # or
 npm install ramdu
+```
+
+#### es6
+
+```
+import * as RU from 'ramdu';
+```
+
+```
+import { alwaysArray } from 'ramdu';
+```
+
+```
+import alwaysArray from 'ramdu/alwaysArray';
+```
+
+#### node
+
+```
+const RU = require('ramdu');
 ```
 
 > Ramdu - Small utils set built around Ramda

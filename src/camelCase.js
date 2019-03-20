@@ -1,6 +1,7 @@
 import { adjust, join, map, pipe, toLower } from 'ramda';
 
 import capitalize from './capitalize';
+import deburr from './deburr';
 import words from './words';
 
 /**
@@ -15,13 +16,9 @@ import words from './words';
  * camelCase('my-name-is-earl'); //'myNameIsEarl'
  */
 const camelCase = pipe(
+  deburr,
   words,
-  map(
-    pipe(
-      toLower,
-      capitalize,
-    ),
-  ),
+  map(capitalize),
   adjust(0, toLower),
   join(''),
 );
