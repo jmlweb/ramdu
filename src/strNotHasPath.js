@@ -20,9 +20,9 @@ import strHasPath from './strHasPath';
  *   }
  * };
  *
- * strHasNoPath('a.b.d', obj); // true
- * strHasNoPath('a.b.c', obj); // false
+ * strNotHasPath('a.b.d', obj); // true
+ * strNotHasPath('a.b.c', obj); // false
  */
-const strHasNoPath = complement(binary(strHasPath));
+const strNotHasPath = complement(binary(strHasPath));
 
-export default strHasNoPath;
+export default strNotHasPath;

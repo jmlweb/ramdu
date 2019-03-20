@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      hasNot.js - Documentation
+      strNotHasPath.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -90,7 +90,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        hasNot.js
+        strNotHasPath.js
       </h1>
     
 
@@ -99,23 +99,34 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { complement, has } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement, binary } from 'ramda';
+
+import strHasPath from './strHasPath';
 
 /**
- * Returns true when the object doesn't contain an own property with the name passed
+ * Complement version of strHasPath
  *
  * @function
- * @param {String} x - The name of the key
- * @param {Object} obj - The object where to find the key
+ * @param {String} str - String representing the path, separated with dots
+ * @param {Object} obj - Received Object
  * @returns {Boolean}
  *
  * @example
- * hasNot('foo', { bar: 1 }); // true
- * hasNot('foo', { foo: 1 }); // false
+ *
+ * const obj = {
+ *   a: {
+ *     b: {
+ *       c: 'foo',
+ *     }
+ *   }
+ * };
+ *
+ * strNotHasPath('a.b.d', obj); // true
+ * strNotHasPath('a.b.c', obj); // false
  */
-const hasNot = complement(has);
+const strNotHasPath = complement(binary(strHasPath));
 
-export default hasNot;
+export default strNotHasPath;
 </code></pre>
   </article>
 </section>
