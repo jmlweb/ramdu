@@ -49,4 +49,10 @@ import { alwaysArray } from 'ramdu';
 import alwaysArray from 'ramdu/alwaysArray';
 ```
 
+#### node
+
+```
+const RU = require('ramdu');
+```
+
 > Ramdu - Small utils set built around Ramda
