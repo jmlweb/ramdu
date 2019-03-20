@@ -15,6 +15,11 @@
     "disableSort": false,
     "resources": {
       "Github": "https://github.com/jmlweb/ramdu"
+    },
+    "search": {
+      "apiKey": "8bd687dcf237c619f9e80974b014642a",
+      "indexName": "jmlweb_ramdu",
+      "hitsPerPage": 5
     }
   },
   "opts": {
