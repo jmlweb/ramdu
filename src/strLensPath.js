@@ -1,5 +1,6 @@
-import { lensPath, split } from 'ramda';
+import { lensPath } from 'ramda';
 
+import { strToArr } from './_internal';
 import withEvolvedArgs from './withEvolvedArgs';
 
 /**
@@ -26,7 +27,7 @@ import withEvolvedArgs from './withEvolvedArgs';
  */
 const strLensPath = withEvolvedArgs(
   {
-    0: split('.'),
+    0: strToArr,
   },
   lensPath,
 );

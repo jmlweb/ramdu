@@ -1,4 +1,4 @@
-import { always, ifElse } from 'ramda';
+import { always, ifElse, is, unless } from 'ramda';
 
 import withEvolvedArgs from './withEvolvedArgs';
 
@@ -9,15 +9,16 @@ import withEvolvedArgs from './withEvolvedArgs';
  * @param {Function} pred - The predicate
  * @param {*} trueValue - Value returned when pred evaluates true
  * @param {*} falseValue - Value returned when pred evaluates false
- * @param {*} val - The value to evaluate
- * @returns {*}
+ * @returns {Function}
  *
  * @example
  * ifElseAlways(prop('foo'), 'a', 'b', { foo: true }); // 'a'
  * ifElseAlways(prop('foo'), 'a', 'b', { foo: false }); // 'b'
  */
+
 const ifElseAlways = withEvolvedArgs(
   {
+    0: unless(is(Function), always),
     1: always,
     2: always,
   },

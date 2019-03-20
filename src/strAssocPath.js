@@ -1,5 +1,6 @@
-import { assocPath, split } from 'ramda';
+import { assocPath } from 'ramda';
 
+import { strToArr } from './_internal';
 import withEvolvedArgs from './withEvolvedArgs';
 
 /**
@@ -25,7 +26,7 @@ import withEvolvedArgs from './withEvolvedArgs';
  */
 const strAssocPath = withEvolvedArgs(
   {
-    0: split('.'),
+    0: strToArr,
   },
   assocPath,
 );
