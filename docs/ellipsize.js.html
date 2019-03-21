@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      strPath.js - Documentation
+      ellipsize.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -104,7 +104,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        strPath.js
+        ellipsize.js
       </h1>
     
 
@@ -113,38 +113,34 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { path, split } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { append, curry, slice, pipe, when } from 'ramda';
 
-import withEvolvedArgs from './withEvolvedArgs';
+import ltLength from './ltLength';
 
 /**
- * String version of path
+ * Cuts the string and adds an ellipsis (…) when the length
+ * is greater than the data provided
  *
  * @function
- * @param {String} str - String representing the path, separated with dots
- * @param {Object} obj - Received Object
- * @returns {*}
+ * @param {Number} maxChars - The max number of characters allowed
+ * @param {String} str - Received string
+ * @returns {String}
  *
  * @example
- *
- * const obj = {
- *   a: {
- *     b: {
- *       c: 'foo',
- *     }
- *   }
- * };
- * strPath('a.b.c', obj); // 'foo'
- * strPath('a.b.c')(obj); // 'foo'
+ * ellipsize(9, 'My name is Earl'); //'My name i…'
+ * ellipsize(40)('My name is Earl'); //'My name is Earl'
  */
-const strPath = withEvolvedArgs(
-  {
-    0: split('.'),
-  },
-  path,
+const ellipsize = curry((maxChars, str) =>
+  when(
+    ltLength(maxChars),
+    pipe(
+      slice(0, maxChars),
+      append('…'),
+    ),
+  )(str),
 );
 
-export default strPath;
+export default ellipsize;
 </code></pre>
   </article>
 </section>
