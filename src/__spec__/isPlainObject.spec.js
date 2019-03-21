@@ -1,7 +1,7 @@
 import assert from 'assert';
 import isPlainObject from '../isPlainObject';
 
-describe('isNotNil', () => {
+describe('isPlainObject', () => {
   const a = {
     foo: 'bar',
   };

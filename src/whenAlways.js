@@ -1,6 +1,7 @@
 import { always, when } from 'ramda';
 
 import withEvolvedArgs from './withEvolvedArgs';
+import castFunction from './castFunction';
 
 /**
  * Executes when with a fixed value
@@ -15,8 +16,12 @@ import withEvolvedArgs from './withEvolvedArgs';
  * whenAlways(prop('foo'), 'a', { foo: true }); // 'a'
  * whenAlways(prop('foo'), 'a', { foo: false }); // { foo: false }
  */
-const whenAlways = withEvolvedArgs({
-  1: always,
-}, when);
+const whenAlways = withEvolvedArgs(
+  {
+    0: castFunction,
+    1: always,
+  },
+  when,
+);
 
 export default whenAlways;
