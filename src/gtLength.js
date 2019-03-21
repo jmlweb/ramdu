@@ -1,7 +1,7 @@
 import { curry, gt, length, pipe } from 'ramda';
 
 /**
- * Checks if the first argument is greather than the length of the second argument
+ * Checks if the first argument is greater than the length of the second argument
  *
  * @function
  * @param {Number} val - The length value
