@@ -1,9 +1,10 @@
-import { always, adjust, cond, map } from 'ramda';
+import { always, evolve, cond, map } from 'ramda';
 
 import withEvolvedArgs from './withEvolvedArgs';
+import castFunction from './castFunction';
 
 /**
- * Executes cond, but returning fixes values, passed as second argument to predicate
+ * Executes cond, but returning fixed values, passed as second argument to predicate
  *
  * @function
  * @param {Array} pred - The predicate
@@ -23,7 +24,12 @@ import withEvolvedArgs from './withEvolvedArgs';
  */
 const condAlways = withEvolvedArgs(
   {
-    0: map(adjust(1, always)),
+    0: map(
+      evolve({
+        0: castFunction,
+        1: always,
+      }),
+    ),
   },
   cond,
 );

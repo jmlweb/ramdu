@@ -3,7 +3,7 @@ import { toUpper } from 'ramda';
 
 import mapKeys from '../mapKeys';
 
-describe('evolveKeys', () => {
+describe('mapKeys', () => {
   it('works', () => {
     const obj = {
       a: 'a',

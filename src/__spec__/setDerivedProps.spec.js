@@ -1,7 +1,7 @@
 import assert from 'assert';
 import setDerivedProps from '../setDerivedProps';
 
-describe('reverseConcat', () => {
+describe('setDerivedProps', () => {
   it('works', () => {
     const result = setDerivedProps(
       {

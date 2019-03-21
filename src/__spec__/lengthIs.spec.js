@@ -1,7 +1,7 @@
 import assert from 'assert';
 import lengthIs from '../lengthIs';
 
-describe('propIsFalsy', () => {
+describe('lengthIs', () => {
   it('returns true', () => {
     assert.equal(lengthIs(3, 'foo'), true);
     assert.equal(lengthIs(3, ['a', 'b', 'c']), true);

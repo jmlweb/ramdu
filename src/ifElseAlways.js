@@ -1,6 +1,7 @@
-import { always, ifElse, is, unless } from 'ramda';
+import { always, ifElse } from 'ramda';
 
 import withEvolvedArgs from './withEvolvedArgs';
+import castFunction from './castFunction';
 
 /**
  * Executes ifElse over 2 fixed values, passed as second and third argument
@@ -18,7 +19,7 @@ import withEvolvedArgs from './withEvolvedArgs';
 
 const ifElseAlways = withEvolvedArgs(
   {
-    0: unless(is(Function), always),
+    0: castFunction,
     1: always,
     2: always,
   },
