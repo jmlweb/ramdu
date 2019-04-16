@@ -24,5 +24,4 @@ export default {
     }),
   ],
   external: ['ramda'],
-  sourcemap: true,
 };
