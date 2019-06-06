@@ -115,28 +115,54 @@
   <section class="readme">
     <article>
       <p><img src="https://raw.githubusercontent.com/jmlweb/ramdu/master/ramdu.svg?sanitize=true" alt="Ramdu"></p>
-<h1>Small utils set built around Ramda</h1><p><a href="https://github.com/jmlweb/ramdu"><img src="https://img.shields.io/github/last-commit/jmlweb/ramdu.svg" alt="Last Commit"></a>
+<h1>Small utils set built around Ramda</h1>
+<p><a href="https://github.com/jmlweb/ramdu"><img src="https://img.shields.io/github/last-commit/jmlweb/ramdu.svg" alt="Last Commit"></a>
 <a href="https://travis-ci.org/jmlweb/ramdu"><img src="https://img.shields.io/travis/jmlweb/ramdu/master.png?style=flat-square" alt="Travis"></a>
 <a href="https://www.npmjs.org/package/ramdu"><img src="https://img.shields.io/npm/v/ramdu.png?style=flat-square" alt="npm package"></a>
 <a href="https://coveralls.io/github/jmlweb/ramdu"><img src="https://img.shields.io/coveralls/jmlweb/ramdu/master.png?style=flat-square" alt="Coveralls"></a></p>
-<h2>Getting started</h2><p>Ramdu has some goals:</p>
+<h2>Getting started</h2>
+<p>Ramdu has some goals:</p>
 <ul>
 <li>To be lightweight</li>
 <li>To use only pure functions with a general purpose</li>
 <li>To export currified versions of all functions</li>
 <li>To look like original Ramda as much as possible</li>
 </ul>
-<h3><a href="https://jmlweb.github.io/ramdu/">Documentation</a></h3><h3>Quick start</h3><pre class="prettyprint source lang-sh"><code>yarn add ramdu
+<h3><a href="https://jmlweb.github.io/ramdu/">Documentation</a></h3>
+<h3>Quick start</h3>
+<pre class="prettyprint source lang-sh"><code>yarn add ramdu
 # or
-npm install ramdu</code></pre><h4>es6</h4><pre class="prettyprint source"><code>import * as RU from 'ramdu';</code></pre><pre class="prettyprint source"><code>import { alwaysArray } from 'ramdu';</code></pre><pre class="prettyprint source"><code>import alwaysArray from 'ramdu/alwaysArray';</code></pre><h4>node</h4><pre class="prettyprint source"><code>const RU = require('ramdu');</code></pre><h2>What does include?</h2><h3>String functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#camelCase">camelCase</a>, <a href="https://jmlweb.github.io/ramdu/global.html#capitalize">Capitalize</a>, <a href="https://jmlweb.github.io/ramdu/global.html#deburr">deburr</a>, <a href="https://jmlweb.github.io/ramdu/global.html#ellipsize">ellipsize…</a>, <a href="https://jmlweb.github.io/ramdu/global.html#pascalCase">pascal-case</a>, <a href="https://jmlweb.github.io/ramdu/global.html#snakeCase">snake_case</a>, <a href="https://jmlweb.github.io/ramdu/global.html#upperSnakeCase">UPPER_SNAKE_CASE</a>, <a href="https://jmlweb.github.io/ramdu/global.html#pad">pad</a>, <a href="https://jmlweb.github.io/ramdu/global.html#padStart">padStart</a>, <a href="https://jmlweb.github.io/ramdu/global.html#padEnd">padEnd</a>, <a href="https://jmlweb.github.io/ramdu/global.html#words">words</a></p>
-<h3>Keys transformation functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#renameKeys">renameKeys</a>, <a href="https://jmlweb.github.io/ramdu/global.html#evolveKeys">evolveKeys</a>, <a href="https://jmlweb.github.io/ramdu/global.html#mapKeys">mapKeys</a></p>
-<h3>&quot;is&quot; functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#isNot">isNot</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isNotEmpty">isNotEmpty</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isNotNil">isNotNil</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isEven">isEven</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isOdd">isOdd</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isFalsy">isFalsy</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isTruthy">isTruthy</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isBetween">isBetween</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isNotBetween">isNotBetween</a>, <a href="https://jmlweb.github.io/ramdu/global.html#propIsFalsy">propIsFalsy</a>, <a href="https://jmlweb.github.io/ramdu/global.html#propIsTruthy">propIsTruthy</a></p>
-<h3>Indexed functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#mapIndexed">mapIndexed</a>, <a href="https://jmlweb.github.io/ramdu/global.html#filterIndexed">filterIndexed</a>, <a href="https://jmlweb.github.io/ramdu/global.html#reduceIndexed">reduceIndexed</a></p>
-<h3>Path as dotted string functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#strAssocPath">strAssocPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strDissocPath">strDissocPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strHasPath">strHasPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strLensPath">strLensPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strNotHasPath">strNotHasPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPath">strPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathEq">strPathEq</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathNotEq">strPathNotEq</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathNotSatisfies">strPathNotSatisfies</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathOr">strPathOr</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathSatisfies">strPathSatisfies</a></p>
-<h3>&quot;defaultTo&quot; functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#defaultToArray">defaultToArray</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToFalse">defaultToFalse</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToObject">defaultToObject</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToString">defaultToString</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToTrue">defaultToTrue</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToZero">defaultToZero</a></p>
-<h3>&quot;always&quot; functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#alwaysArray">alwaysArray</a>, <a href="https://jmlweb.github.io/ramdu/global.html#alwaysObject">alwaysObject</a>, <a href="https://jmlweb.github.io/ramdu/global.html#alwaysString">alwaysString</a>, <a href="https://jmlweb.github.io/ramdu/global.html#alwaysZero">alwaysZero</a></p>
-<h3>Argument functions</h3><p><a href="https://jmlweb.github.io/ramdu/global.html#list">list</a>, <a href="https://jmlweb.github.io/ramdu/global.html#whenArgs">whenArgs</a>, <a href="https://jmlweb.github.io/ramdu/global.html#withEvolvedArgs">withEvolvedArgs</a></p>
-<h3>...and much more</h3><blockquote>
+npm install ramdu
+</code></pre>
+<h4>es6</h4>
+<pre class="prettyprint source"><code>import * as RU from 'ramdu';
+</code></pre>
+<pre class="prettyprint source"><code>import { alwaysArray } from 'ramdu';
+</code></pre>
+<pre class="prettyprint source"><code>import alwaysArray from 'ramdu/alwaysArray';
+</code></pre>
+<h4>node</h4>
+<pre class="prettyprint source"><code>const RU = require('ramdu');
+</code></pre>
+<h2>What does include?</h2>
+<h3>String functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#camelCase">camelCase</a>, <a href="https://jmlweb.github.io/ramdu/global.html#capitalize">Capitalize</a>, <a href="https://jmlweb.github.io/ramdu/global.html#deburr">deburr</a>, <a href="https://jmlweb.github.io/ramdu/global.html#ellipsize">ellipsize…</a>, <a href="https://jmlweb.github.io/ramdu/global.html#pascalCase">pascal-case</a>, <a href="https://jmlweb.github.io/ramdu/global.html#snakeCase">snake_case</a>, <a href="https://jmlweb.github.io/ramdu/global.html#upperSnakeCase">UPPER_SNAKE_CASE</a>, <a href="https://jmlweb.github.io/ramdu/global.html#pad">pad</a>, <a href="https://jmlweb.github.io/ramdu/global.html#padStart">padStart</a>, <a href="https://jmlweb.github.io/ramdu/global.html#padEnd">padEnd</a>, <a href="https://jmlweb.github.io/ramdu/global.html#words">words</a></p>
+<h3>Keys transformation functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#renameKeys">renameKeys</a>, <a href="https://jmlweb.github.io/ramdu/global.html#evolveKeys">evolveKeys</a>, <a href="https://jmlweb.github.io/ramdu/global.html#mapKeys">mapKeys</a></p>
+<h3>&quot;is&quot; functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#isNot">isNot</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isNotEmpty">isNotEmpty</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isNotNil">isNotNil</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isEven">isEven</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isOdd">isOdd</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isFalsy">isFalsy</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isTruthy">isTruthy</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isBetween">isBetween</a>, <a href="https://jmlweb.github.io/ramdu/global.html#isNotBetween">isNotBetween</a>, <a href="https://jmlweb.github.io/ramdu/global.html#propIsFalsy">propIsFalsy</a>, <a href="https://jmlweb.github.io/ramdu/global.html#propIsTruthy">propIsTruthy</a></p>
+<h3>Indexed functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#mapIndexed">mapIndexed</a>, <a href="https://jmlweb.github.io/ramdu/global.html#filterIndexed">filterIndexed</a>, <a href="https://jmlweb.github.io/ramdu/global.html#reduceIndexed">reduceIndexed</a></p>
+<h3>Path as dotted string functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#strAssocPath">strAssocPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strDissocPath">strDissocPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strHasPath">strHasPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strLensPath">strLensPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strNotHasPath">strNotHasPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPath">strPath</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathEq">strPathEq</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathNotEq">strPathNotEq</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathNotSatisfies">strPathNotSatisfies</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathOr">strPathOr</a>, <a href="https://jmlweb.github.io/ramdu/global.html#strPathSatisfies">strPathSatisfies</a></p>
+<h3>&quot;defaultTo&quot; functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#defaultToArray">defaultToArray</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToFalse">defaultToFalse</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToObject">defaultToObject</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToString">defaultToString</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToTrue">defaultToTrue</a>, <a href="https://jmlweb.github.io/ramdu/global.html#defaultToZero">defaultToZero</a></p>
+<h3>&quot;always&quot; functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#alwaysArray">alwaysArray</a>, <a href="https://jmlweb.github.io/ramdu/global.html#alwaysObject">alwaysObject</a>, <a href="https://jmlweb.github.io/ramdu/global.html#alwaysString">alwaysString</a>, <a href="https://jmlweb.github.io/ramdu/global.html#alwaysZero">alwaysZero</a></p>
+<h3>Argument functions</h3>
+<p><a href="https://jmlweb.github.io/ramdu/global.html#list">list</a>, <a href="https://jmlweb.github.io/ramdu/global.html#whenArgs">whenArgs</a>, <a href="https://jmlweb.github.io/ramdu/global.html#withEvolvedArgs">withEvolvedArgs</a></p>
+<h3>...and much more</h3>
+<blockquote>
 <p>Ramdu - Small utils set built around Ramda</p>
 </blockquote>
     </article>
@@ -151,7 +177,7 @@ npm install ramdu</code></pre><h4>es6</h4><pre class="prettyprint source"><code>
   <br class="clear">
 
   <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a>
   </footer>
 
   <script src="scripts/linenumber.js"></script>
