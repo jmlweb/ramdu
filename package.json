@@ -1,6 +1,6 @@
 {
   "name": "ramdu",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Small utils for ramda",
   "keywords": [
     "fp",
