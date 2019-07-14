@@ -15,9 +15,7 @@ export default {
   output,
   plugins: [
     resolve({
-      module: true,
-      main: true,
-      jsnext: true,
+      mainFields: ['module', 'main', 'jsnext:main'],
     }),
     commonjs({
       include: 'node_modules/**',
