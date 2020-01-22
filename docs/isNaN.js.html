@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      reduceIndexed.js - Documentation
+      isNaN.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -104,7 +104,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        reduceIndexed.js
+        isNaN.js
       </h1>
     
 
@@ -113,22 +113,28 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { addIndex, reduce } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
 
 /**
- * Indexed version of reduce
+ * Checks if the value type is NaN (Not a number)
  *
  * @function
- * @param {Function} fn - The function passed to reduce, receiving index as third argument for the reducer fn
- * @param {Array} arr - Source array
- * @returns {*}
+ * @param {*} val - The value provided
+ * @returns {Boolean}
  *
  * @example
- * reduceIndexed((acc, curr, idx) => `${acc}${curr}.${idx},`, '', ['a', 'b', 'c']); // 'a.0,b.1,c.2,'
+ * isNaN(undefined); // false
+ * isNaN(null); // false
+ * isNaN(0); // false
+ * isNaN(''); // false
+ * isNaN(1); // false
+ * isNaN('a'); // false
+ * isNaN(Number('1')); // false
+ * isNaN(Number('a')); // true
  */
-const reduceIndexed = addIndex(reduce);
+const isNaN = equals(NaN);
 
-export default reduceIndexed;
+export default isNaN;
 </code></pre>
   </article>
 </section>
