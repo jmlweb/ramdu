@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      reduceIndexed.js - Documentation
+      isNotNaN.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -104,7 +104,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        reduceIndexed.js
+        isNotNaN.js
       </h1>
     
 
@@ -113,22 +113,30 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { addIndex, reduce } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+
+import isNaN from './isNaN';
 
 /**
- * Indexed version of reduce
+ * Checks if a parsed number is not a number
  *
  * @function
- * @param {Function} fn - The function passed to reduce, receiving index as third argument for the reducer fn
- * @param {Array} arr - Source array
- * @returns {*}
+ * @param {*} val - Checks if the value type is not NaN (Not a number)
+ * @returns {Boolean}
  *
  * @example
- * reduceIndexed((acc, curr, idx) => `${acc}${curr}.${idx},`, '', ['a', 'b', 'c']); // 'a.0,b.1,c.2,'
+ * isNotNaN(undefined); // true
+ * isNotNaN(null); // true
+ * isNotNaN(0); // true
+ * isNotNaN(''); // true
+ * isNotNaN(1); // true
+ * isNotNaN('a'); // true
+ * isNotNaN(Number('a')); // false
+ * isNotNaN(Number('1')); // true
  */
-const reduceIndexed = addIndex(reduce);
+const isNotNaN = complement(isNaN);
 
-export default reduceIndexed;
+export default isNotNaN;
 </code></pre>
   </article>
 </section>
