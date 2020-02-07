@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      propNotEq.js - Documentation
+      sortByIndexes.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -104,7 +104,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        propNotEq.js
+        sortByIndexes.js
       </h1>
     
 
@@ -113,24 +113,40 @@
 
 <section>
   <article>
-    <pre class="prettyprint source linenums"><code>import { complement, propEq } from 'ramda';
+    <pre class="prettyprint source linenums"><code>import { curry, is } from 'ramda';
 
 /**
- *  Complement for propEq
+ * Sort items in a list, indicating the new indexes
  *
  * @function
- * @param {String} x - The name of the key
- * @param {*} val - The value for comparison
- * @param {Object} obj - The object where to find the key
- * @returns {Boolean}
+ * @param {Array} indexes - Array with new indexes
+ * @param {Array} list - The list that will be sorter with the new indexes
+ * @returns {Array}
  *
  * @example
- * propNotEq('foo', 'a', { foo: 'b' }); // true
- * propNotEq('foo', 'a', { foo: 'a' }); // false
+ * const indexes = [0,3,2,1,4];
+ * const incIndexes = [3,2,1,4]
+ * const list = ["a", "b", "c", "d", "e"];
+ *
+ * sortByIndexes(indexes, list); // ["a", "d", "c", "b", "e"]
+ * sortByIndexes(incIndexes, list); // [undefined, "c", "b", "a", "d"]
  */
-const propNotEq = complement(propEq);
 
-export default propNotEq;
+const sortByIndexes = curry((indexes, list) =>
+  list.reduce(
+    (acc, curr, index) => {
+      const newIndex = indexes[index];
+      if (is(Number, newIndex) &amp;&amp; newIndex &lt; list.length &amp;&amp; newIndex >= 0) {
+        acc[newIndex] = curr;
+      }
+      return acc;
+    },
+    [],
+    list,
+  ),
+);
+
+export default sortByIndexes;
 </code></pre>
   </article>
 </section>
